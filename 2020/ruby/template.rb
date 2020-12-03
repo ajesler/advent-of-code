@@ -10,6 +10,8 @@
 # $ ruby solver.rb --specs
 
 class Solver
+  def solve
+  end
 end
 
 require 'test/unit'
@@ -26,10 +28,9 @@ if $PROGRAM_NAME == __FILE__
     Test::Unit::AutoRunner.need_auto_run = true
   else
     data_source = first_argument.nil? ? DATA.read : File.read(first_argument)
-    # Run the solver
-    data_source.split(/\r?\n/, 2)
+    lines = data_source.lines
 
-    Solver.new
+    Solver.new.solve
   end
 end
 
